@@ -19,7 +19,7 @@ public class TestServer {
 
         try {
             /*
-            服务端启动：用于启动服务端的类
+            服务端启动：用于x启动服务端的类
              */
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             //group() 第一个参数接受请求，把接受的请求交给第二个参数进行处理
