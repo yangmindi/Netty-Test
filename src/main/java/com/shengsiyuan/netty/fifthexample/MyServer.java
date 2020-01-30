@@ -5,11 +5,9 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
 public class MyServer {
@@ -22,7 +20,7 @@ public class MyServer {
             bootstrap.group(bossGroup, wokerGroup).
                     channel(NioServerSocketChannel.class).
                     handler(new LoggingHandler(LogLevel.INFO)).
-                    childHandler(null);
+                    childHandler(new WebSocketChannelInitializer());
             ChannelFuture sync = bootstrap.bind(new InetSocketAddress(8899)).sync();
             sync.channel().closeFuture().sync();
         }finally {
