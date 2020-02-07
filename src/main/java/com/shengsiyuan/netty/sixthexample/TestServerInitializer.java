@@ -15,7 +15,7 @@ public class TestServerInitializer extends ChannelInitializer<SocketChannel> {
 
         //内置编码解码器，将字节数组和对象之间转换
         pipeline.addLast(new ProtobufVarint32FrameDecoder());
-        pipeline.addLast(new ProtobufDecoder(MyDataInfo.Person.getDefaultInstance()));//解码
+        pipeline.addLast(new ProtobufDecoder(MyDataInfo.MyMessage.getDefaultInstance()));//解码
         pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
         pipeline.addLast(new ProtobufEncoder());
 
