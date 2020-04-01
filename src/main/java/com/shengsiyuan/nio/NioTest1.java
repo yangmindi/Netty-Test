@@ -5,7 +5,8 @@ import java.security.SecureRandom;
 
 public class NioTest1 {
     public static void main(String[] args) {
-        IntBuffer buffer = IntBuffer.allocate(10);//分配一个大小为10的缓冲区，只能放整数
+        //分配一个大小为10的缓冲区，只能放整数
+        IntBuffer buffer = IntBuffer.allocate(10);
 
         for(int i=0; i<5; i++){
             int randomNumber = new SecureRandom().nextInt(20);
