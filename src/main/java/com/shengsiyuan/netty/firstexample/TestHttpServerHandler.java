@@ -15,6 +15,7 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
     /*
     读取客户端发送的请求 ，并且向客户端返回响应
      */
+    @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
 
         System.out.println(msg.getClass());
